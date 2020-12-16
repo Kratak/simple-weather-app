@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb96e2c3-afa3-4325-939c-a4e45f62078e" name="Default Changelist" comment="" />
-    <list id="8e7ea63f-31f2-4b87-9f5b-0c81b9ced5bc" name="ignore" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+    <list default="true" id="fb96e2c3-afa3-4325-939c-a4e45f62078e" name="Default Changelist" comment="* change #1">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/api/openWeatherApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/api/openWeatherApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-openweathermap-api-hook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-api.ts" afterDir="false" />
     </list>
+    <list id="8e7ea63f-31f2-4b87-9f5b-0c81b9ced5bc" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +84,7 @@
       <workItem from="1607895487009" duration="10669000" />
       <workItem from="1608108528001" duration="491000" />
       <workItem from="1608112095089" duration="596000" />
-      <workItem from="1608113860894" duration="3783000" />
+      <workItem from="1608113860894" duration="4686000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1607894893831</created>
@@ -124,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608158287498</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="* change #1">
+      <created>1608158335571</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608158335571</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +147,8 @@
     <MESSAGE value="init cleaning, app setup and core libraries" />
     <MESSAGE value="+ Add #1 .env config" />
     <MESSAGE value="+ Add #1 use openWeather hook" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Add #1 use openWeather hook" />
+    <MESSAGE value="* change #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="* change #1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

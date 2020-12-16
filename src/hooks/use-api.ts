@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  apiKey,
+  openWeatherApiKey,
   openWeatherApiCallTypes,
   openWeatherApiInstance,
 } from "./api/openWeatherApi";
@@ -14,13 +14,13 @@ const mockData = {
 
 const callType = openWeatherApiCallTypes.onecall;
 
-export const useOpenweathermap = (props?: IUseOpenweathermapProps) => {
+export const useApi = (props?: IUseOpenweathermapProps) => {
   const [apiData, setApiData] = useState<{}>();
 
   useEffect(() => {
     openWeatherApiInstance
       .get(
-        `${callType}?lat=${mockData.lat}&lon=${mockData.lon}&appid=${apiKey}`
+        `${callType}?lat=${mockData.lat}&lon=${mockData.lon}&appid=${openWeatherApiKey}`
       )
       .then((response) => setApiData(response.data))
       .catch((e) => console.log(e));

@@ -10,4 +10,4 @@ export enum openWeatherApiCallTypes {
   onecall = "onecall",
 }
 
-export const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
+export const openWeatherApiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;

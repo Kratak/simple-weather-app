@@ -1,8 +1,8 @@
 import React from "react";
-import { useOpenweathermap } from "./hooks/use-openweathermap-api-hook";
+import { useApi } from "./hooks/use-api";
 
 const App = () => {
-  const { apiData } = useOpenweathermap();
+  const { apiData } = useApi();
 
   console.log(apiData);
   return <div>Test</div>;
