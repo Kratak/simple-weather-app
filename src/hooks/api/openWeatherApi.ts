@@ -1,13 +1,14 @@
 import axios from "axios";
 
-export const openWeatherApiInstance = axios.create({
-  baseURL: process.env.REACT_APP_OPENWEATHER_API_URL,
-  responseType: "json",
-});
-
 export enum openWeatherApiCallTypes {
   forecast = "forecast",
   onecall = "onecall",
 }
 
-export const openWeatherApiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
+const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
+const baseUrl = process.env.REACT_APP_OPENWEATHER_API_URL;
+
+export const openWeatherApiInstance = axios.create({
+  baseURL: `${baseUrl}${openWeatherApiCallTypes.onecall}?appid=${apiKey}&exclude=hourly,minutely`,
+  responseType: "json",
+});
