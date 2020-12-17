@@ -14,25 +14,47 @@ enum UnitsTypes {
   imperial = "imperial",
 }
 
+enum LocalStorageKeys {
+  language = "language",
+  unit = "unit",
+  city = "city",
+}
+
+const initialCityName = localStorage.getItem(LocalStorageKeys.city);
+const initialLanguage = localStorage.getItem(LocalStorageKeys.language);
+const initialUnit = localStorage.getItem(LocalStorageKeys.unit) as UnitsTypes;
+
 export const useApi = (props?: IUseOpenweathermapProps) => {
   const [apiData, setApiData] = useState<{}>();
   const [geoCoordinates, setGeoCoordinates] = useState<IGeoCoordinates>();
-  const [city, setCity] = useState<string>();
-  const [unit, setUnit] = useState<UnitsTypes>(UnitsTypes.metric);
-  const [language, setLanguage] = useState<string>("pl");
+  const [city, setCity] = useState<string | null>(initialCityName);
+  const [unit, setUnit] = useState<UnitsTypes>(
+    initialUnit || UnitsTypes.metric
+  );
+  const [language, setLanguage] = useState<string>(initialLanguage || "pl");
 
-  const handleCityChange = (value: string) => setCity(value);
-  const handleUnitChange = (value: UnitsTypes) => setUnit(value);
-  const handleLanguageChange = (value: string) => setLanguage(value);
+  const handleCityChange = (value: string) => {
+    setCity(value);
+    localStorage.setItem(LocalStorageKeys.city, value);
+  };
+  const handleUnitChange = (value: UnitsTypes) => {
+    setUnit(value);
+    localStorage.setItem(LocalStorageKeys.unit, value);
+  };
+  const handleLanguageChange = (value: string) => {
+    setLanguage(value);
+    localStorage.setItem(LocalStorageKeys.language, value);
+  };
 
   useEffect(() => {
-    if (!geoCoordinates) {
+    if (!geoCoordinates && !initialCityName) {
       navigator.geolocation.getCurrentPosition(
-        ({ coords: { latitude, longitude } }) =>
-          setGeoCoordinates({ lat: latitude, lng: longitude })
+        ({ coords: { latitude, longitude } }) => {
+          setGeoCoordinates({ lat: latitude, lng: longitude });
+        }
       );
     }
-  }, []);
+  }, [geoCoordinates]);
 
   useEffect(() => {
     if (geoCoordinates && language && unit) {
